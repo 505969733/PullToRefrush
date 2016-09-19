@@ -1,0 +1,107 @@
+<android.support.v4.widget.DrawerLayout
+    android:id="@+id/root"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:id="@+id/id_main_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ff8504"
+            android:gravity="center"
+            android:paddingBottom="10dp"
+            android:paddingTop="24dp"
+            android:visibility="visible"
+            android:text="主题"
+            android:textColor="#fff"
+            android:textSize="20sp"/>
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:id="@+id/btn"
+            android:text="跳转"
+            android:layout_height="wrap_content"/>
+
+        <com.zhy.pullToRefreshLayout.pullableview.PullToRefreshLayout
+            android:id="@+id/refresh_view"
+            android:layout_width="match_parent"
+            android:layout_weight="3"
+            android:layout_height="0dp"
+            >
+                <include layout="@layout/allview_refresh_head" />
+
+            <!-- 支持所有实现Pullable接口的View -->
+
+            <com.zhy.pullToRefreshLayout.pullableview.PullableListView
+                android:id="@+id/listView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#fff"
+                android:divider="#ddd"
+                android:dividerHeight="1dp" />
+
+                <include layout="@layout/allview_load_more" />
+
+
+        </com.zhy.pullToRefreshLayout.pullableview.PullToRefreshLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:visibility="gone"
+            android:layout_height="0dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+
+          <EditText
+              android:layout_width="0dp"
+              android:layout_weight="1"
+              android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btn_send"
+                android:layout_width="60dp"
+                android:text="发送"
+                android:layout_margin="10dp"
+                android:layout_height="wrap_content"/>
+
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/key"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/id_nv_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/banner"
+        app:menu="@menu/menu_drawer"
+        />
+
+
+</android.support.v4.widget.DrawerLayout>

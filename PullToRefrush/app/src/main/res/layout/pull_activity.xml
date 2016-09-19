@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.zhy.pullToRefreshLayout.pullableview.PullToRefreshLayout
+        android:id="@+id/refresh_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <include
+            android:id="@+id/header"
+            layout="@layout/allview_refresh_head" />
+
+        <!-- 支持所有实现Pullable接口的View -->
+
+        <com.zhy.pullToRefreshLayout.pullableview.PullableRecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:overScrollMode="never"
+            android:layout_height="match_parent"
+            android:background="#fff"></com.zhy.pullToRefreshLayout.pullableview.PullableRecyclerView>
+        <include
+            android:id="@+id/footer"
+            layout="@layout/allview_load_more" />
+
+
+    </com.zhy.pullToRefreshLayout.pullableview.PullToRefreshLayout>
+
+    <LinearLayout
+        android:id="@+id/linearTop"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/red"
+        android:paddingTop="20dp"
+        android:alpha="1"
+        android:visibility="invisible"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageBack"
+            android:layout_width="wrap_content"
+            android:src="@mipmap/back"
+            android:padding="12dp"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_gravity="center_horizontal"
+            android:text="标题党"
+            android:textSize="16sp"
+            android:textColor="#fff"
+            android:gravity="center"
+            android:paddingRight="32dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+</RelativeLayout>

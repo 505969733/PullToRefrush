@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@drawable/banner2"
+              android:orientation="vertical"
+              android:paddingTop="10dp">
+
+    <com.zhy.pullToRefreshLayout.pullableview.PullToRefreshLayout
+        android:id="@+id/refresh_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f1f1f1">
+
+            <include layout="@layout/allview_refresh_head"/>
+        </LinearLayout>
+
+        <!-- 支持所有实现Pullable接口的View -->
+
+        <com.zhy.pullToRefreshLayout.pullableview.PullableScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btn_start"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="启动新的界面"/>
+
+                <Button
+                    android:id="@+id/btn_finish"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="20dp"
+                    android:text="结束界面1"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    ></TextView>
+
+                <RadioGroup
+                    android:id="@+id/tracking_mode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                    <RadioButton
+                        android:id="@+id/mode_left"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/tracking_mode_left"/>
+
+                    <RadioButton
+                        android:id="@+id/mode_right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tracking_mode_right"/>
+
+                    <RadioButton
+                        android:id="@+id/mode_bottom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tracking_mode_bottom"/>
+
+                    <RadioButton
+                        android:id="@+id/mode_all"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tracking_mode_all"/>
+                </RadioGroup>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"/>
+
+                <TextView
+                    android:id="@+id/key"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"/>
+            </LinearLayout>
+
+        </com.zhy.pullToRefreshLayout.pullableview.PullableScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f1f1f1">
+
+            <include layout="@layout/allview_load_more"/>
+        </LinearLayout>
+
+
+    </com.zhy.pullToRefreshLayout.pullableview.PullToRefreshLayout>
+
+
+</LinearLayout>
